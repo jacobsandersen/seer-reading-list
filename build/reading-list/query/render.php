@@ -14,16 +14,22 @@ $component = isset( $attributes['component'] ) ? (string) $attributes['component
 $limit     = isset( $attributes['limit'] ) ? (int) $attributes['limit'] : 10;
 $columns   = isset( $attributes['columns'] ) ? (int) $attributes['columns'] : 1;
 
+// The pagination id is user-editable, so restrict it to URL-safe characters
+// before it becomes part of a query arg name.
 $instance = ( isset( $attributes['uid'] ) && '' !== $attributes['uid'] )
 	? (string) $attributes['uid']
 	: wp_unique_id( 'seer-' );
+$instance = preg_replace( '/[^A-Za-z0-9_-]/', '', $instance );
+if ( '' === $instance ) {
+	$instance = wp_unique_id( 'seer-' );
+}
 $page_arg = 'seer-page-' . $instance;
 $page     = isset( $_GET[ $page_arg ] ) ? max( 1, (int) $_GET[ $page_arg ] ) : 1; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 $result = seer_fetch_books( $component, $page, $limit );
 
 if ( is_wp_error( $result ) ) {
-	echo '<div ' . get_block_wrapper_attributes( array( 'class' => 'seer' ) ) . '><p class="seer-reading-list__error">' . esc_html( $result->get_error_message() ) . '</p></div>';
+	echo '<div ' . get_block_wrapper_attributes( array( 'class' => 'seer-reading-list' ) ) . '><p class="seer-reading-list__error">' . esc_html( $result->get_error_message() ) . '</p></div>';
 	return;
 }
 
@@ -34,14 +40,14 @@ if ( $page > $total_pages ) {
 	$page = max( 1, $total_pages );
 	$result = seer_fetch_books( $component, $page, $limit );
 	if ( is_wp_error( $result ) ) {
-		echo '<div ' . get_block_wrapper_attributes( array( 'class' => 'seer' ) ) . '><p class="seer-reading-list__error">' . esc_html( $result->get_error_message() ) . '</p></div>';
+		echo '<div ' . get_block_wrapper_attributes( array( 'class' => 'seer-reading-list' ) ) . '><p class="seer-reading-list__error">' . esc_html( $result->get_error_message() ) . '</p></div>';
 		return;
 	}
 }
 
 $wrapper_attributes = get_block_wrapper_attributes(
 	array(
-		'class'           => 'seer',
+		'class'           => 'seer-reading-list',
 		'style'           => '--srl-cols:' . $columns . ';',
 		'data-component'  => $component,
 		'data-page'       => $page,
