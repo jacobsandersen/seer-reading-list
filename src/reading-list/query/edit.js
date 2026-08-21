@@ -11,7 +11,12 @@ import {
 	InspectorControls,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
+import {
+	PanelBody,
+	RangeControl,
+	SelectControl,
+	TextControl,
+} from '@wordpress/components';
 import './editor.scss';
 
 /**
@@ -101,6 +106,17 @@ export default function Edit( props ) {
 						max={ 8 }
 						onChange={ ( value ) =>
 							setAttributes( { columns: Number( value ) } )
+						}
+					/>
+					<TextControl
+						label={ __( 'Pagination ID', 'seer' ) }
+						help={ __(
+							'Must be unique for each query block. Keeps pagination independent between blocks. Changing it resets that block\u2019s page to 1.',
+							'seer'
+						) }
+						value={ uid }
+						onChange={ ( value ) =>
+							setAttributes( { uid: value } )
 						}
 					/>
 				</PanelBody>

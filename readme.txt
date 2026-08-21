@@ -2,7 +2,7 @@
 Contributors:      Jacob Andersen
 Tags:              block, books, music, reading, query loop
 Tested up to:      6.8
-Stable tag:        2.0.1
+Stable tag:        2.0.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,9 @@ No. The plugin proxies every request through PHP (`wp_remote_get`), so the token
 Yes. Each query block paginates independently via its own stable identifier.
 
 == Changelog ==
+
+= 2.0.2 =
+* The query block's pagination ID is now editable under Settings in the block sidebar, so duplicated blocks can be given unique IDs without recreating them.
 
 = 2.0.1 =
 * Fix pagination not rendering on the front end after the namespace migration.
