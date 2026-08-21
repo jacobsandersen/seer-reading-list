@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "seer/reading-list-book-meta-count",
+  "version": "2.0.0",
+  "title": "Seer Read Count",
+  "category": "widgets",
+  "icon": "chart-bar",
+  "description": "Displays how many times a Seer book was read. Hidden when the book has not been read. Best used inside a Seer Book Query block.",
+  "ancestor": [
+    "seer/reading-list-query"
+  ],
+  "attributes": {
+    "size": {
+      "type": "integer",
+      "default": 12
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "seer",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

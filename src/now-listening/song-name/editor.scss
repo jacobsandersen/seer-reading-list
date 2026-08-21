@@ -1,0 +1,12 @@
+/**
+ * Editor-only styles for the Seer Song Name block.
+ */
+
+.wp-block-seer-now-listening-song-name {
+
+	&.seer-now-listening__song {
+		display: block;
+		font-weight: 600;
+		font-size: var(--srl-size, 1rem);
+	}
+}

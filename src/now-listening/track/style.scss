@@ -1,0 +1,12 @@
+/**
+ * Front-end styles for the Seer Now Listening block.
+ */
+
+.seer-now-listening {
+
+	&__fallback,
+	&__error {
+		font-style: italic;
+		opacity: 0.7;
+	}
+}

@@ -1,0 +1,18 @@
+/**
+ * Front-end styles for the Seer Song Name block.
+ */
+
+.seer-now-listening__song {
+	display: block;
+	font-weight: 600;
+	font-size: var(--srl-size, 1rem);
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

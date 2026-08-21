@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "seer/now-listening-song-name",
+	"version": "2.0.0",
+	"title": "Seer Song Name",
+	"category": "widgets",
+	"icon": "music",
+	"description": "Displays the name of the current song, optionally linked to its Last.fm page.",
+	"ancestor": [
+		"seer/now-listening-track"
+	],
+	"attributes": {
+		"size": {
+			"type": "integer",
+			"default": 16
+		},
+		"linkToLastFm": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "seer",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

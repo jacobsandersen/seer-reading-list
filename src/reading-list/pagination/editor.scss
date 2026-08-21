@@ -1,0 +1,23 @@
+/**
+ * Editor styles for the Seer Pagination block.
+ */
+
+.seer-reading-list__pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	font-size: var(--srl-size, 0.875rem);
+
+	span {
+		padding: 0.4rem 0.9rem;
+	}
+
+	span[aria-disabled="true"] {
+		opacity: 0.4;
+	}
+
+	.seer-reading-list__page {
+		opacity: 0.7;
+	}
+}

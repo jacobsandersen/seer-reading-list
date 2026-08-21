@@ -1,0 +1,18 @@
+/**
+ * Editor-only styles for the Seer Now Listening block.
+ */
+
+.wp-block-seer-now-listening-track {
+
+	.seer-now-listening__sample {
+		padding: 1.25rem;
+		border: 1px dashed #bbb;
+		border-radius: 0.5rem;
+
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+	}
+}

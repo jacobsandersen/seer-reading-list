@@ -1,0 +1,9 @@
+/**
+ * Front-end styles for the Seer Read Count block.
+ */
+
+.seer-reading-list__meta-line {
+	display: block;
+	font-size: var(--srl-size, 0.75rem);
+	opacity: 0.75;
+}

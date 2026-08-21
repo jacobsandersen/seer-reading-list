@@ -1,0 +1,9 @@
+/**
+ * Front-end styles for the Seer Book Title block.
+ */
+
+.seer-reading-list__title {
+	display: block;
+	font-weight: 600;
+	font-size: var(--srl-size, 1rem);
+}

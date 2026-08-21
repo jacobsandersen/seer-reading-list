@@ -1,0 +1,9 @@
+/**
+ * Front-end styles for the Seer Artist Name block.
+ */
+
+.seer-now-listening__artist {
+	display: block;
+	font-size: var(--srl-size, 0.875rem);
+	opacity: 0.75;
+}

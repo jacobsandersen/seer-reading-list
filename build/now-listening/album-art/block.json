@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "seer/now-listening-album-art",
+  "version": "2.0.0",
+  "title": "Seer Album Art",
+  "category": "widgets",
+  "icon": "format-image",
+  "description": "Displays the album art of the current song. Hidden when no artwork is available.",
+  "ancestor": [
+    "seer/now-listening-track"
+  ],
+  "attributes": {
+    "imageSize": {
+      "type": "string",
+      "enum": [
+        "small",
+        "medium",
+        "large",
+        "extralarge"
+      ],
+      "default": "extralarge"
+    },
+    "imageWidth": {
+      "type": "integer",
+      "default": 200
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "seer",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

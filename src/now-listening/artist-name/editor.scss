@@ -1,0 +1,12 @@
+/**
+ * Editor-only styles for the Seer Artist Name block.
+ */
+
+.wp-block-seer-now-listening-artist-name {
+
+	&.seer-now-listening__artist {
+		display: block;
+		font-size: var(--srl-size, 0.875rem);
+		opacity: 0.75;
+	}
+}

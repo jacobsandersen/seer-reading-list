@@ -1,0 +1,15 @@
+/**
+ * Editor styles for the Seer Book Query block.
+ */
+
+.seer-reading-list__sample {
+	padding: 1.25rem;
+	border: 1px dashed #bbb;
+	border-radius: 0.5rem;
+
+	> .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+}

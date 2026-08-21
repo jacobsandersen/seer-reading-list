@@ -1,0 +1,19 @@
+/**
+ * Front-end styles for the Seer Album Art block.
+ */
+
+.seer-now-listening__art {
+	margin: 0;
+	width: var(--srl-image-width, 200px);
+	max-width: 100%;
+	min-width: 0;
+	flex: none;
+	overflow: hidden;
+	border-radius: 0.25rem;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
