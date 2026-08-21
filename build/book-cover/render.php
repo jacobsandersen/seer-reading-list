@@ -1,0 +1,25 @@
+<?php
+/**
+ * Renders the Seer Book Cover block.
+ *
+ * @var WP_Block $block The block instance.
+ */
+
+$book  = seer_reading_list_get_book();
+$image = isset( $book['image'] ) ? (string) $book['image'] : '';
+$image_width = isset( $attributes['imageWidth'] ) ? (int) $attributes['imageWidth'] : 200;
+
+if ( '' === $image ) {
+	return;
+}
+
+$wrapper = get_block_wrapper_attributes(
+	array(
+		'class' => 'seer-reading-list__cover',
+		'style' => '--srl-image-width:' . $image_width . 'px;',
+	)
+);
+?>
+<figure <?php echo $wrapper; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_block_wrapper_attributes() escapes. ?>>
+	<img src="<?php echo esc_url( $image ); ?>" alt="" loading="lazy" />
+</figure>

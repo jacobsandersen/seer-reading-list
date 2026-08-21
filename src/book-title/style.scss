@@ -1,0 +1,12 @@
+/**
+ * Front-end styles for the Seer Book Title block.
+ */
+
+.wp-block-seer-reading-list-book-title {
+
+	&.seer-reading-list__title {
+		display: block;
+		font-weight: 600;
+		font-size: var(--srl-size, 1rem);
+	}
+}

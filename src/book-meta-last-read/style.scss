@@ -1,0 +1,12 @@
+/**
+ * Front-end styles for the Seer Last Read block.
+ */
+
+.wp-block-seer-reading-list-book-meta-last-read {
+
+	&.seer-reading-list__meta-line {
+		display: block;
+		font-size: var(--srl-size, 0.75rem);
+		opacity: 0.75;
+	}
+}

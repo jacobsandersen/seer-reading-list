@@ -1,0 +1,13 @@
+/**
+ * Front-end styles for the Seer Book Author block.
+ */
+
+.wp-block-seer-reading-list-book-author {
+
+	&.seer-reading-list__author {
+		display: block;
+		color: inherit;
+		opacity: 0.75;
+		font-size: var(--srl-size, 0.875rem);
+	}
+}
