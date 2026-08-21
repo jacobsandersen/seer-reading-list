@@ -16,7 +16,7 @@ cd "$(dirname "$0")/.."
 PLUGIN_SLUG="seer-reading-list"
 VERSION=$(node -p "require('./package.json').version")
 STAGE="dist/${PLUGIN_SLUG}"
-ZIP="dist/${PLUGIN_SLUG}.zip"
+ZIP="dist/${PLUGIN_SLUG}-${VERSION}.zip"
 
 # 1. Build fresh assets (also regenerates build/blocks-manifest.php).
 npm run build
@@ -32,7 +32,7 @@ cp -r includes build "${STAGE}/"
 #    wp-content/plugins/seer-reading-list/.
 (
 	cd dist
-	zip -rq "${PLUGIN_SLUG}.zip" "${PLUGIN_SLUG}"
+	zip -rq "${ZIP##*/}" "${PLUGIN_SLUG}"
 )
 
 # 4. Drop the staging copy; keep only the archive.

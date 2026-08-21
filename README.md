@@ -32,10 +32,14 @@ npm start      # watch/build dev assets
 npm run build  # production build
 npm run lint:js
 npm run lint:css
-npm run package  # reproducible release zip -> dist/seer-reading-list.zip
+npm run package  # reproducible release zip -> dist/seer-reading-list-<version>.zip
 ```
 
 The plugin ships compiled assets from `build/`; there is no separate CI build step.
+
+## Releases
+
+Pushing a semver tag (`v1.2.3`) triggers the release workflow, which packages the plugin and publishes a GitHub release with the zip attached. The tag must match the version in `package.json`.
 
 ## License
 
