@@ -2,7 +2,7 @@
 Contributors:      Jacob Andersen
 Tags:              block, books, reading, query loop
 Tested up to:      6.8
-Stable tag:        1.0.0
+Stable tag:        1.0.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,9 @@ No. The plugin proxies every request through PHP (`wp_remote_get`), so the token
 Yes. Each query block paginates independently via its own stable identifier.
 
 == Changelog ==
+
+= 1.0.1 =
+* Restrict book item blocks to render only inside a Seer Book Query block; pagination must be a direct child of the query.
 
 = 1.0.0 =
 * Initial release: query loop block with cover, title, author, read count, last read, and pagination blocks.
