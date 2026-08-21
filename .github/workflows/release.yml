@@ -45,8 +45,8 @@ jobs:
 
       - name: Verify artifact exists
         run: |
-          ZIP=$(find dist -name 'seer-reading-list-*.zip')
-          if [ ! -s "${ZIP}" ]; then
+          ZIP=$(find dist -name 'seer-*.zip' | head -1)
+          if [ -z "${ZIP}" ] || [ ! -s "${ZIP}" ]; then
             echo "::error::Packaged zip is missing or empty"
             exit 1
           fi
