@@ -1,0 +1,62 @@
+name: Release
+
+# Publishes a GitHub release with the packaged plugin zip whenever a
+# version tag (v1.2.3) is pushed.
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Package & publish release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify tag matches package version
+        run: |
+          PACKAGE_VERSION="v$(node -p "require('./package.json').version")"
+          if [ "${PACKAGE_VERSION}" != "${GITHUB_REF_NAME}" ]; then
+            echo "::error::Tag ${GITHUB_REF_NAME} does not match package version ${PACKAGE_VERSION}"
+            exit 1
+          fi
+
+      - name: Package
+        run: npm run package
+
+      - name: Verify artifact exists
+        run: |
+          ZIP=$(find dist -name 'seer-reading-list-*.zip')
+          if [ ! -s "${ZIP}" ]; then
+            echo "::error::Packaged zip is missing or empty"
+            exit 1
+          fi
+          echo "ZIP=${ZIP}" >> "${GITHUB_ENV}"
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            "${ZIP}" \
+            --title "Seer Reading List ${GITHUB_REF_NAME}" \
+            --generate-notes
