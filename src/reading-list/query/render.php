@@ -62,7 +62,7 @@ if ( empty( $books ) ) {
 $item_blocks = array();
 $pagination_block = null;
 foreach ( $block->inner_blocks as $inner_block ) {
-	if ( 'seer/pagination' === $inner_block->name ) {
+	if ( 'seer/reading-list-pagination' === $inner_block->name ) {
 		$pagination_block = $inner_block;
 	} else {
 		$item_blocks[] = $inner_block;

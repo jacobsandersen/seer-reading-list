@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Seer Blocks
  * Description:       Gutenberg block suite for Seer: reading list query loop and Now Listening, with draggable item sub-blocks. Requests are proxied server-side so credentials never reach the browser.
- * Version:           2.0.0
+ * Version:           2.0.1
  * Requires at least: 6.8
  * Requires PHP:      7.4
  * Author:            Jacob Andersen

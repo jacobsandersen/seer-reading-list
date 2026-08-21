@@ -35,21 +35,21 @@ const COMPONENTS = [
 const ALLOWED_BLOCKS = [
 	'core/group',
 	'core/columns',
-	'seer/book-cover',
-	'seer/book-title',
-	'seer/book-author',
-	'seer/book-meta-count',
-	'seer/book-meta-last-read',
-	'seer/pagination',
+	'seer/reading-list-book-cover',
+	'seer/reading-list-book-title',
+	'seer/reading-list-book-author',
+	'seer/reading-list-book-meta-count',
+	'seer/reading-list-book-meta-last-read',
+	'seer/reading-list-pagination',
 ];
 
 const TEMPLATE = [
-	[ 'seer/book-cover' ],
-	[ 'seer/book-title' ],
-	[ 'seer/book-author' ],
-	[ 'seer/book-meta-count' ],
-	[ 'seer/book-meta-last-read' ],
-	[ 'seer/pagination' ],
+	[ 'seer/reading-list-book-cover' ],
+	[ 'seer/reading-list-book-title' ],
+	[ 'seer/reading-list-book-author' ],
+	[ 'seer/reading-list-book-meta-count' ],
+	[ 'seer/reading-list-book-meta-last-read' ],
+	[ 'seer/reading-list-pagination' ],
 ];
 
 /**
