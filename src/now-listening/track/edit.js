@@ -14,6 +14,8 @@ import { PanelBody, TextControl } from '@wordpress/components';
 import './editor.scss';
 
 const ALLOWED_BLOCKS = [
+	'core/group',
+	'core/columns',
 	'seer/now-listening-song-name',
 	'seer/now-listening-artist-name',
 	'seer/now-listening-album-art',
@@ -56,7 +58,6 @@ export default function Edit( props ) {
 					<InnerBlocks
 						allowedBlocks={ ALLOWED_BLOCKS }
 						template={ TEMPLATE }
-						templateLock="insert"
 						orientation="vertical"
 					/>
 				</div>
