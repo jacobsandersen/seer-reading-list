@@ -2,11 +2,14 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "seer-reading-list/book-cover",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"title": "Seer Book Cover",
 	"category": "widgets",
 	"icon": "format-image",
 	"description": "Displays the cover image of a Seer book. Only valid inside a Seer Book Query block.",
+	"ancestor": [
+		"seer-reading-list/query"
+	],
 	"attributes": {
 		"imageWidth": {
 			"type": "integer",
@@ -15,7 +18,11 @@
 	},
 	"supports": {
 		"html": false,
-		"align": [ "left", "center", "right" ]
+		"align": [
+			"left",
+			"center",
+			"right"
+		]
 	},
 	"textdomain": "seer-reading-list",
 	"editorScript": "file:./index.js",

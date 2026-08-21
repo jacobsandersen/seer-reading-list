@@ -2,11 +2,14 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "seer-reading-list/book-meta-last-read",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"title": "Seer Last Read",
 	"category": "widgets",
 	"icon": "calendar",
 	"description": "Displays when a Seer book was last read. Hidden when the date is unavailable. Best used inside a Seer Book Query block.",
+	"ancestor": [
+		"seer-reading-list/query"
+	],
 	"attributes": {
 		"size": {
 			"type": "integer",

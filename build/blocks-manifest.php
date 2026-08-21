@@ -5,11 +5,14 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'seer-reading-list/book-author',
-		'version' => '1.0.0',
+		'version' => '1.0.1',
 		'title' => 'Seer Book Author',
 		'category' => 'widgets',
 		'icon' => 'nametag',
 		'description' => 'Displays the author of a Seer book. Only valid inside a Seer Book Query block.',
+		'ancestor' => array(
+			'seer-reading-list/query'
+		),
 		'attributes' => array(
 			'size' => array(
 				'type' => 'integer',
@@ -34,11 +37,14 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'seer-reading-list/book-cover',
-		'version' => '1.0.0',
+		'version' => '1.0.1',
 		'title' => 'Seer Book Cover',
 		'category' => 'widgets',
 		'icon' => 'format-image',
 		'description' => 'Displays the cover image of a Seer book. Only valid inside a Seer Book Query block.',
+		'ancestor' => array(
+			'seer-reading-list/query'
+		),
 		'attributes' => array(
 			'imageWidth' => array(
 				'type' => 'integer',
@@ -63,11 +69,14 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'seer-reading-list/book-meta-count',
-		'version' => '1.0.0',
+		'version' => '1.0.1',
 		'title' => 'Seer Read Count',
 		'category' => 'widgets',
 		'icon' => 'chart-bar',
 		'description' => 'Displays how many times a Seer book was read. Hidden when the book has not been read. Best used inside a Seer Book Query block.',
+		'ancestor' => array(
+			'seer-reading-list/query'
+		),
 		'attributes' => array(
 			'size' => array(
 				'type' => 'integer',
@@ -87,11 +96,14 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'seer-reading-list/book-meta-last-read',
-		'version' => '1.0.0',
+		'version' => '1.0.1',
 		'title' => 'Seer Last Read',
 		'category' => 'widgets',
 		'icon' => 'calendar',
 		'description' => 'Displays when a Seer book was last read. Hidden when the date is unavailable. Best used inside a Seer Book Query block.',
+		'ancestor' => array(
+			'seer-reading-list/query'
+		),
 		'attributes' => array(
 			'size' => array(
 				'type' => 'integer',
@@ -111,11 +123,14 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'seer-reading-list/book-title',
-		'version' => '1.0.0',
+		'version' => '1.0.1',
 		'title' => 'Seer Book Title',
 		'category' => 'widgets',
 		'icon' => 'heading',
 		'description' => 'Displays the title of a Seer book. Only valid inside a Seer Book Query block.',
+		'ancestor' => array(
+			'seer-reading-list/query'
+		),
 		'attributes' => array(
 			'size' => array(
 				'type' => 'integer',
@@ -140,11 +155,14 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'seer-reading-list/pagination',
-		'version' => '1.0.0',
+		'version' => '1.0.1',
 		'title' => 'Seer Pagination',
 		'category' => 'widgets',
 		'icon' => 'ellipsis',
 		'description' => 'Pagination controls for a Seer Book Query block. Rendered once below the book list; omit this block to hide pagination.',
+		'parent' => array(
+			'seer-reading-list/query'
+		),
 		'attributes' => array(
 			'size' => array(
 				'type' => 'integer',
@@ -164,7 +182,7 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'seer-reading-list/query',
-		'version' => '1.0.0',
+		'version' => '1.0.1',
 		'title' => 'Seer Book Query',
 		'category' => 'widgets',
 		'icon' => 'book',
