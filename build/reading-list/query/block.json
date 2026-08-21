@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "seer/reading-list-query",
+  "version": "2.0.0",
+  "title": "Seer Book Query",
+  "category": "widgets",
+  "icon": "book",
+  "description": "Query books from Seer and render each one using an inner block template.",
+  "keywords": [
+    "seer",
+    "books",
+    "reading",
+    "query"
+  ],
+  "attributes": {
+    "component": {
+      "type": "string",
+      "enum": [
+        "read",
+        "current",
+        "wanted"
+      ],
+      "default": "current"
+    },
+    "limit": {
+      "type": "integer",
+      "default": 10
+    },
+    "columns": {
+      "type": "integer",
+      "default": 1
+    },
+    "uid": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": true
+  },
+  "textdomain": "seer",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

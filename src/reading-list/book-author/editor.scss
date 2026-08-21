@@ -1,0 +1,10 @@
+/**
+ * Editor styles for the Seer Book Author block.
+ */
+
+.seer-reading-list__author {
+	display: block;
+	color: inherit;
+	opacity: 0.75;
+	font-size: var(--srl-size, 0.875rem);
+}

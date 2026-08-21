@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "seer/reading-list-pagination",
+  "version": "2.0.0",
+  "title": "Seer Pagination",
+  "category": "widgets",
+  "icon": "ellipsis",
+  "description": "Pagination controls for a Seer Book Query block. Rendered once below the book list; omit this block to hide pagination.",
+  "parent": [
+    "seer/reading-list-query"
+  ],
+  "attributes": {
+    "size": {
+      "type": "integer",
+      "default": 14
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "seer",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

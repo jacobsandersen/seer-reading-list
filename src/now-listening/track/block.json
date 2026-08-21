@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "seer/now-listening-track",
+	"version": "2.0.0",
+	"title": "Seer Now Listening",
+	"category": "widgets",
+	"icon": "controls-volumeon",
+	"description": "Displays the track you are currently listening to, fetched from Seer, rendered with inner blocks for song, artist, and album art.",
+	"attributes": {
+		"fallbackText": {
+			"type": "string",
+			"default": "Nothing playing right now"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "seer",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

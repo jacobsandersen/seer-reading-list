@@ -13,7 +13,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-PLUGIN_SLUG="seer-reading-list"
+PLUGIN_SLUG="seer"
 VERSION=$(node -p "require('./package.json').version")
 STAGE="dist/${PLUGIN_SLUG}"
 ZIP="dist/${PLUGIN_SLUG}-${VERSION}.zip"
@@ -25,7 +25,7 @@ npm run build
 rm -rf dist
 mkdir -p "${STAGE}"
 
-cp seer-reading-list.php readme.txt "${STAGE}/"
+cp seer.php readme.txt "${STAGE}/"
 cp -r includes build "${STAGE}/"
 
 # 3. Zip with a top-level plugin folder so extraction lands in

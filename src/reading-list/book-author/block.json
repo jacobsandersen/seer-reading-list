@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "seer/reading-list-book-author",
+	"version": "2.0.0",
+	"title": "Seer Book Author",
+	"category": "widgets",
+	"icon": "nametag",
+	"description": "Displays the author of a Seer book. Only valid inside a Seer Book Query block.",
+	"ancestor": [
+		"seer/reading-list-query"
+	],
+	"attributes": {
+		"size": {
+			"type": "integer",
+			"default": 14
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"left",
+			"center",
+			"right"
+		]
+	},
+	"textdomain": "seer",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}
